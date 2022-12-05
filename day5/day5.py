@@ -14,10 +14,10 @@ if __name__ == "__main__":
 
     # Parse crate stacks
     num_stacks = int(raw_manifest[8][-2])
-    crates_start = " ".join(raw_manifest[:8]).replace("    ", "X")
+    crates_start = " ".join(raw_manifest[:8]).replace("    ", "-")
     crates_start = list(re.subn("\s|\[|\]", "", crates_start)[0])
     crates_start = np.array(np.array_split(crates_start, len(crates_start) // num_stacks)).T
-    crates_start = ["".join(stack).replace("X", "") for stack in crates_start]
+    crates_start = ["".join(stack).replace("-", "") for stack in crates_start]
 
     # Parse instructions
     instructions = raw_manifest[10:]
