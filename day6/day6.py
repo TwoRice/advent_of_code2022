@@ -9,4 +9,4 @@ if __name__ == "__main__":
         datastream = f.read()
 
     print(f"Part 1: {find(datastream, 4)}")
-    print(f"Part 1: {find(datastream, 14)}")
+    print(f"Part 2: {find(datastream, 14)}")
