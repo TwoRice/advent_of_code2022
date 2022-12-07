@@ -26,9 +26,7 @@ if __name__ == "__main__":
         ]
 
     ## Build file tree
-    file_tree = {
-        "home": {}
-    }
+    file_tree = {"home": {}}
     current_dir = ""
 
     for cmd in command_history:
