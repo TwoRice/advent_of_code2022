@@ -1,15 +1,12 @@
 import re
 
-def manhattan_distance(x1, x2, y1, y2):
-    return abs(x1 - x2) + abs(y1 - y2)
-
 if __name__ == "__main__":
     with open("day15.txt", "r") as f:
         sensor_data = [[int(v) for v in re.findall(r"-*\d+", sensor)] for sensor in f.read().split("\n")]
 
     sensor_map = {}
     for sensor_x, sensor_y, beacon_x, beacon_y in sensor_data:
-        beacon_dist = manhattan_distance(sensor_x, beacon_x, sensor_y, beacon_y)
+        beacon_dist = abs(sensor_x - beacon_x) + abs(sensor_y - beacon_y)
         sensor_map[(sensor_y, sensor_x)] = beacon_dist
 
     blocked_x = set()
