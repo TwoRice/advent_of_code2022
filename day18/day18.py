@@ -15,7 +15,7 @@ def bfs(graph, start, end):
     while queue:
         path = queue.pop(0)
         node = path[-1]
-        if node == end: return path
+        if node == end: return True
         elif node not in visited:
             for a in ADJACENT:
                 neighbour = tuple(sum(x) for x in zip(node, a))
